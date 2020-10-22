@@ -51,3 +51,20 @@ let area = findArea(cathetusA: catA, cathetusB: catB)
 print("Площадь: \(area)")
 
 // MARK: - Task 3
+func calcDeposit(startSum: Float, percent: Float, years: Int) -> Float {
+    var totalSum = startSum
+    
+    for _ in 1...years {
+        let proceeds = percent / 100 * totalSum
+        totalSum += proceeds
+    }
+    
+    return totalSum
+}
+
+let startSum: Float = 200_000
+let percent: Float = 7
+let years = 5
+
+let totalSum = calcDeposit(startSum: startSum, percent: percent, years: years)
+print("Стартовая сумма: \(startSum), процент: \(percent), срок: \(years). Итоговая сумма: \(totalSum)")
