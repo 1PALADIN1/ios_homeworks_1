@@ -49,3 +49,5 @@ print("Периметр: \(perimeter)")
 
 let area = findArea(cathetusA: catA, cathetusB: catB)
 print("Площадь: \(area)")
+
+// MARK: - Task 3
