@@ -1,1 +1,70 @@
+import Foundation
 
+// MARK: - Task 1
+func solveQuadraticEq(a: Float, b: Float, c: Float) {
+    let d = b * b - 4 * a * c
+    
+    if d < 0 {
+        print("Корней нет!")
+        return
+    }
+    
+    if d == 0 {
+        let x = -b / 2 * a
+        print("Единственный корень: \(x)")
+        return
+    }
+    
+    let x1 = (-b + sqrt(d)) / (2 * a)
+    let x2 = (-b - sqrt(d)) / (2 * a)
+    
+    print("Корни уравнения x1 = \(x1), x2 = \(x2)")
+}
+
+solveQuadraticEq(a: 1, b: -2, c: 3)
+solveQuadraticEq(a: 1, b: -2, c: -3)
+solveQuadraticEq(a: 1, b: 12, c: 36)
+
+// MARK: - Task 2
+func findHypotenuse(cathetusA: Float, cathetusB: Float) -> Float {
+    return sqrt(cathetusA * cathetusA + cathetusB * cathetusB)
+}
+
+func findPerimeter(sideA: Float, sideB: Float, sideC: Float) -> Float {
+    return sideA + sideB + sideC
+}
+
+func findArea(cathetusA: Float, cathetusB: Float) -> Float {
+    return cathetusA * cathetusB / 2
+}
+
+let catA: Float = 12
+let catB: Float = 10
+
+let hypotenuse = findHypotenuse(cathetusA: catA, cathetusB: catB)
+print("Гипотенуза: \(hypotenuse)")
+
+let perimeter = findPerimeter(sideA: catA, sideB: catB, sideC: hypotenuse)
+print("Периметр: \(perimeter)")
+
+let area = findArea(cathetusA: catA, cathetusB: catB)
+print("Площадь: \(area)")
+
+// MARK: - Task 3
+func calcDeposit(startSum: Float, percent: Float, years: Int) -> Float {
+    var totalSum = startSum
+    
+    for _ in 1...years {
+        let proceeds = percent / 100 * totalSum
+        totalSum += proceeds
+    }
+    
+    return totalSum
+}
+
+let startSum: Float = 200_000
+let percent: Float = 7
+let years = 5
+
+let totalSum = calcDeposit(startSum: startSum, percent: percent, years: years)
+print("Стартовая сумма: \(startSum), процент: \(percent), срок: \(years). Итоговая сумма: \(totalSum)")
