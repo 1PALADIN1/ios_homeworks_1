@@ -23,3 +23,12 @@ number = 9
 print("Число \(number) делится на 3? \(isNumberDivisiblyByThree(number: number))")
 number = 21
 print("Число \(number) делится на 3? \(isNumberDivisiblyByThree(number: number))")
+
+// MARK: - 3. Создать возрастающий массив из 100 чисел.
+var array: Array<Int> = []
+
+for i in 1...100 {
+    array.append(i)
+}
+
+print(array)
