@@ -71,3 +71,25 @@ for item in array {
 }
 
 print(resultArray)
+
+// MARK: - 5. * Написать функцию, которая добавляет в массив новое число Фибоначчи, и добавить при помощи нее 100 элементов.
+func addFiboNumber(_ fiboNumbers: [Decimal]) -> [Decimal] {
+    guard fiboNumbers.count >= 2 else {
+        print("Fibo function error")
+        return fiboNumbers
+    }
+    
+    let lastIndex = fiboNumbers.count - 1
+    let nextNumber = fiboNumbers[lastIndex] + fiboNumbers[lastIndex - 1]
+    
+    var result = Array(fiboNumbers)
+    result.append(nextNumber)
+    return result
+}
+
+var fiboNumbers: [Decimal] = [ 0, 1 ]
+for _ in 1...100 {
+    fiboNumbers = addFiboNumber(fiboNumbers)
+}
+
+print("Fibo: ", fiboNumbers)
